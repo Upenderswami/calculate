@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#background
+{
+    background-image: url(./image/background-image.png);
+    background-size: cover;
+    height: 620px;
+
+}
+.main
+{
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.box
+{
+    background-color: brown;
+    /* height: 300px; */
+    width: 400px;
+    margin: 90px;
+    text-align: center;
+    padding: 40px;
+    border-radius: 60px 0   60px 0;
+    box-shadow: 5px 5px 10px black;
+}
+input
+{
+    border-radius: 10px;
+    padding:10px 16px;
+    margin: 20px;
+    box-shadow: 5px 5px 10px black;
+    border: 2px solid black;
+}
+button
+{
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    border: 2px solid black;
+    padding:10px 19px;
+}
+select
+{
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    padding:10px 16px;
+    border: 2px solid black;
+
+}
+    </style>
+</head>
+<body>
+    <div id="background">  
+        <div class="main">
+            <div class="box">
+        <input type="number" id="sub" placeholder="Enter your first value"> <br>
+        <select id="calculate">
+            <option value="">Select Value</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+          </select><br>
+    <input type="number" id="sub2" placeholder="Enter your second value"> <br>
+    <button type="button" onclick="calc()">Submit</button><br /><br />
+    <input type="number" id="res">
+</div>
+</div>
+</div>
+
+    <script>
+      function calc() {
+        let sub = parseInt(document.getElementById("sub").value);
+        let sub2 = parseInt(document.getElementById("sub2").value);
+        let calculate = document.getElementById("calculate").value;
+
+        if (calculate === "+") {
+          document.getElementById("res").value = sub + sub2;
+        }
+        if (calculate === "-") {
+          document.getElementById("res").value = sub - sub2;
+        }
+        if (calculate === "*") {
+         document.getElementById("res").value = sub * sub2;
+        }
+        if (calculate === "/") {
+          document.getElementById("res").value = sub / sub2;
+        }
+        if (calculate === "%") {
+         document.getElementById("res").value = sub % sub2;
+        }
+      }
+    </script>
+</body>
+</html>
